@@ -1,17 +1,17 @@
-package ru.gb.oseminar.view;
+package main.java.ru.gb.oseminar.view;
 
-import ru.gb.oseminar.data.Student;
-import ru.gb.oseminar.data.StudentGroup;
+import main.java.ru.gb.oseminar.data.Student;
+import main.java.ru.gb.oseminar.data.StudentGroup;
 
 import java.util.List;
 import java.util.logging.Logger;
 
-public class StudentView implements UserView<Student>{
+public class StudentView extends UserView<Student> {
 
     Logger logger = Logger.getLogger(StudentView.class.getName());
 
     @Override
-    public void sendOnConsole(List<Student> students) {
+    public void sendToPrint(List<Student> students, Printer printer) {
         for(Student user: students){
             logger.info(user.toString());
         }

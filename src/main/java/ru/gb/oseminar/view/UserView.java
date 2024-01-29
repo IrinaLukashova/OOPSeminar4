@@ -1,9 +1,14 @@
-package ru.gb.oseminar.view;
+package main.java.ru.gb.oseminar.view;
 
-import ru.gb.oseminar.data.User;
+import main.java.ru.gb.oseminar.data.User;
 
 import java.util.List;
 
-public interface UserView<T extends User>{
-    void sendOnConsole(List<T> list);
+public class UserView<T extends User>{
+    public Printer printer;
+
+    public void sendToPrint(List<T> list, Printer printer){
+        printer.print();
+        System.out.println(list + "напечатан в" + printer);
+    };
 }
